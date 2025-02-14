@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Carlos Martínez de la Fuente</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <main>
-        <h1>¡Bienvenido a mi web!</h1>  
-    </main>
-    <p>Mi nombre es Carlos Martínez, y esta es mi página web 
-            de presentación donde podrás encontrar material de interés
-            sobre mí como mi Curriculum Vitae, enlaces a mis redes e 
-            información de contacto.<p>
-    <script src="index.js"></script>
-
-    <h6>Work in progress<h6>
-  </body>
+    <title>Mi CV</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .column {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        .foto img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Carlos Martínez de la Fuente</h1>
+        <p>Estudiante en Ingeniería Biomédica</p>
+    </header>
+    <div class="container">
+        <section class="column foto">
+            <img src="media/E44A6166.JPG" alt="Foto de perfil">
+        </section>
+        <section class="column info">
+            <h2>Sobre mí</h2>
+            <p>Breve descripción sobre ti.</p>
+            <h2>Redes Sociales</h2>
+            <button onclick="toggleMenu()">Mostrar Redes</button>
+            <ul id="redes-menu" style="display: none;">
+                <li><a href="https://www.linkedin.com/in/cmdlf" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/CarMarFu" target="_blank">GitHub</a></li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Carlos Martínez de la Fuente</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("redes-menu");
+            menu.style.display = menu.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
 </html>
+
