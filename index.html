@@ -3,55 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi CV</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CV - Carlos Martínez de la Fuente</title>
     <style>
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        @import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Sans:wght@400;700&display=swap');
+        body {
+            font-family: 'Latin Modern Sans', sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+            background-color: #f8f8f8;
         }
-        .column {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
+        h1 { font-size: 34px;
+            padding-bottom: 5px;
         }
-        .foto img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 50%;
+        h2 { color: #800020; font-size: 22px; border-bottom: 2px solid #800020; padding-bottom: 3px; }
+        .contacto, .seccion {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .seccion p {
+            margin: 5px 0;
+        }
+        .competencias {
+            display: grid;
+            grid-template-columns: 1fr 1fr; row-gap: 2px;
+            gap: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li strong {
+            display: block;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        ul li.sub-item {
+            font-size: 16px;
+            margin-left: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Carlos Martínez de la Fuente</h1>
-        <p>Estudiante en Ingeniería Biomédica</p>
-    </header>
-    <div class="container">
-        <section class="column foto">
-            <img src="media/E44A6166.JPG" alt="Foto de perfil">
-        </section>
-        <section class="column info">
-            <h2>Sobre mí</h2>
-            <p>Breve descripción sobre ti.</p>
-            <h2>Redes Sociales</h2>
-            <button onclick="toggleMenu()">Mostrar Redes</button>
-            <ul id="redes-menu" style="display: none;">
-                <li><a href="https://www.linkedin.com/in/cmdlf" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/CarMarFu" target="_blank">GitHub</a></li>
-            </ul>
-        </section>
+    <h1>Carlos Martínez de la Fuente</h1>
+
+    <p><strong>Ingeniero Biomédico</strong></p>
+    <p>Apasionado de los datos y la programación. Resolutivo y multidisciplinar.</p>
+    <p>Disponible para prácticas en verano.</p>
+  
+    <div class="contacto">
+        <p>📍 Balentegui Kalea, 15 – 20018 Donostia/San Sebastián</p>
+        <p>📞 <a href="tel:+34608968901">+34 608 96 89 01</a></p>
+        <p>📧 <a href="mailto:carmarfu03@gmail.com">carmarfu03@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/cmdlf">LinkedIn</a></p>
+        <p>🚗 Permiso de conducir B (Coche propio)</p>
     </div>
-    <footer>
-        <p>&copy; 2024 Carlos Martínez de la Fuente</p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("redes-menu");
-            menu.style.display = menu.style.display === "none" ? "block" : "none";
-        }
-    </script>
+    
+    <div class="seccion">
+        <h2>Formación Académica</h2>
+        <ul>
+            <li><strong>Grado en Ingeniería Biomédica</strong> - Tecnun, Universidad de Navarra (2021-2025)
+                <ul>
+                    <li class="sub-item">- Proyecto Fin de Grado: Desarrollo de un algoritmo de ML para control de prótesis de muñeca (ene. 2025 - jun. 2025)</li>
+                    <li class="sub-item">- IAthon I ed.: Uso del API de ChatGPT para generación de informes (ene. 2025)</li>
+                    <li class="sub-item">- Curso BioDesign V ed.: Diseño y prototipado de simulador de venopunción (ene. 2025)</li>
+                    <li class="sub-item">- Alumno Interno: Simulación de evolución de tumores con PhysiBoSS (feb. 2024 - may. 2024)</li>
+                    <li class="sub-item">- Alumno Interno: Preparación y caracterización de hidrogeles basados en porcina y redes de microfibras por electrospinning (jun. 2023)</li>
+                </ul>
+            </li>
+            <li><strong>Bachillerato Dual Español-Estadounidense</strong> - Academia Colegia + Colegio La Salle Palencia (2017-2021)
+                <ul>
+                    <li class="sub-item">- Miembro LEGO Robotix Team: Primer premio First Lego League (Burgos, 2017)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="seccion">
+        <h2>Competencias Informáticas</h2>
+        <div class="competencias">
+            <p><strong>Python:</strong> Análisis de datos, machine learning</p>
+            <p><strong>Matlab:</strong> Simulaciones</p>
+            <p><strong>PowerBI:</strong> Análisis y representación de datos</p>
+            <p><strong>LATEX:</strong> Metodología de investigación</p>
+            <p><strong>Git:</strong> GitHub/GitLab, control de versiones</p>
+            <p><strong>Linux:</strong> Arch, Debian</p>
+        </div>
+    </div>
+    
+    <div class="seccion">
+        <h2>Idiomas</h2>
+        <p>Castellano: Nativo</p>
+        <p>Inglés: Advanced (C1) Acreditado</p>
+    </div>
+    
+    <div class="seccion">
+        <h2>Voluntariado</h2>
+        <p><strong>Diseñador de página web</strong> - Diseño y montaje de un sitio web para alojar las inscripciones y dar visibilidad al evento "Concurso de castillos de arena - ATECE GIPUZKOA" (oct. 2023 - abr. 2024)</p>
+        <p><strong>BASIDA</strong> - Estancia de 15 días en una casa de acogida para personas con VIH/SIDA y en riesgo de exclusión social en Aranjuez (jul. 2022)</p>
+    </div>
+    
+    <div class="seccion">
+        <h2>Distinciones</h2>
+        <p><strong>Diploma de alumno mediador</strong> - Miembro del equipo de mediación estudiantil del centro. Formación en mediación y resolución de conflictos. Junta de Castilla y León + Colegio La Salle Palencia (2019)</p>
+    </div>
 </body>
 </html>
 
