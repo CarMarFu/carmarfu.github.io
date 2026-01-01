@@ -4,112 +4,327 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Carlos Martínez de la Fuente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Sans:wght@400;700&display=swap');
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #800020;
+            --text-color: #333;
+            --bg-color: #f0f2f5;
+            --sidebar-bg: #fff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: 'Latin Modern Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            margin: 40px;
-            color: #333;
-            background-color: #f8f8f8;
+            font-size: 15px;
         }
-        h1 { font-size: 34px;
-            padding-bottom: 5px;
-        }
-        h2 { color: #800020; font-size: 22px; border-bottom: 2px solid #800020; padding-bottom: 3px; }
-        .contacto, .seccion {
-            margin-bottom: 20px;
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
             background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .seccion p {
-            margin: 5px 0;
-        }
-        .competencias {
             display: grid;
-            grid-template-columns: 1fr 1fr; row-gap: 2px;
-            gap: 5px;
+            grid-template-columns: 300px 1fr;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
         }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
+
+        /* Sidebar Styles */
+        aside {
+            background-color: #f8f9fa;
+            padding: 40px 30px;
+            border-right: 1px solid #eee;
         }
-        ul li strong {
-            display: block;
-            font-size: 18px;
-            margin-top: 10px;
+
+        .profile-photo-container {
+            text-align: center;
+            margin-bottom: 25px;
         }
-        ul li.sub-item {
+        
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-header h1 {
+            font-size: 26px;
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .profile-header .role {
+            color: var(--accent-color);
+            font-weight: 600;
             font-size: 16px;
-            margin-left: 20px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .contact-item i {
+            width: 20px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+        
+        .contact-item a { color: var(--text-color); text-decoration: none; transition: color 0.2s; }
+        .contact-item a:hover { color: var(--accent-color); }
+
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .skill-tag { background: #e9ecef; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 500; }
+
+        main { padding: 40px; }
+        section { margin-bottom: 35px; }
+
+        h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .experience-item { margin-bottom: 25px; }
+        .experience-item h3 { font-size: 16px; color: var(--primary-color); font-weight: 700; }
+        
+        .institution {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            display: block;
+            font-style: italic;
+        }
+
+        ul.details { list-style-type: none; }
+        ul.details li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+            color: #555;
+        }
+        ul.details li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Botón para el PDF */
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--primary-color);
+            text-decoration: none;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            background-color: #fafafa;
+        }
+        .btn-link:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .hobby-item { margin-bottom: 12px; }
+        .hobby-item strong { display: block; font-size: 14px; color: var(--primary-color); display: flex; align-items: center; gap: 8px;}
+        .hobby-item span { font-size: 13px; color: #666; display: block; margin-top: 2px; margin-left: 28px;}
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; margin: 0; border-radius: 0; }
+            aside { border-right: none; border-bottom: 1px solid #eee; text-align: center; }
+            .contact-item { justify-content: center; }
+            .skills-grid { justify-content: center; }
+            .hobby-item strong { justify-content: center; }
+            .hobby-item span { margin-left: 0; }
+        }
+        @media print {
+            body { background: white; -webkit-print-color-adjust: exact; }
+            .container { box-shadow: none; margin: 0; max-width: 100%; }
+            .btn-link { display: none; } /* Ocultar enlace PDF al imprimir */
         }
     </style>
 </head>
 <body>
-    <h1>Carlos Martínez de la Fuente</h1>
+    <div class="container">
+        <aside>
+            <div class="profile-photo-container">
+                <img src="media/E44A6166.JPG" alt="Carlos Martínez" class="profile-photo" onerror="this.style.display='none'"> 
+            </div>
 
-    <p><strong>Ingeniero Biomédico</strong></p>
-    <p>Apasionado de los datos y la programación. Resolutivo y multidisciplinar.</p>
-    <p>Disponible para prácticas en verano.</p>
-  
-    <div class="contacto">
-        <p>📍 Balentegui Kalea, 15 – 20018 Donostia/San Sebastián</p>
-        <p>📞 <a href="tel:+34608968901">+34 608 96 89 01</a></p>
-        <p>📧 <a href="mailto:carmarfu03@gmail.com">carmarfu03@gmail.com</a></p>
-        <p>🔗 <a href="https://www.linkedin.com/in/cmdlf">LinkedIn</a></p>
-        <p>🚗 Permiso de conducir B (Coche propio)</p>
-    </div>
-    
-    <div class="seccion">
-        <h2>Formación Académica</h2>
-        <ul>
-            <li><strong>Grado en Ingeniería Biomédica</strong> - Tecnun, Universidad de Navarra (2021-2025)
-                <ul>
-                    <li class="sub-item">- Proyecto Fin de Grado: Desarrollo de un algoritmo de ML para control de prótesis de muñeca (ene. 2025 - jun. 2025)</li>
-                    <li class="sub-item">- IAthon I ed.: Uso del API de ChatGPT para generación de informes (ene. 2025)</li>
-                    <li class="sub-item">- Curso BioDesign V ed.: Diseño y prototipado de simulador de venopunción (ene. 2025)</li>
-                    <li class="sub-item">- Alumno Interno: Simulación de evolución de tumores con PhysiBoSS (feb. 2024 - may. 2024)</li>
-                    <li class="sub-item">- Alumno Interno: Preparación y caracterización de hidrogeles basados en porcina y redes de microfibras por electrospinning (jun. 2023)</li>
-                </ul>
-            </li>
-            <li><strong>Bachillerato Dual Español-Estadounidense</strong> - Academia Colegia + Colegio La Salle Palencia (2017-2021)
-                <ul>
-                    <li class="sub-item">- Miembro LEGO Robotix Team: Primer premio First Lego League (Burgos, 2017)</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="seccion">
-        <h2>Competencias Informáticas</h2>
-        <div class="competencias">
-            <p><strong>Python:</strong> Análisis de datos, machine learning</p>
-            <p><strong>Matlab:</strong> Simulaciones</p>
-            <p><strong>PowerBI:</strong> Análisis y representación de datos</p>
-            <p><strong>LATEX:</strong> Metodología de investigación</p>
-            <p><strong>Git:</strong> GitHub/GitLab, control de versiones</p>
-            <p><strong>Linux:</strong> Arch, Debian</p>
-        </div>
-    </div>
-    
-    <div class="seccion">
-        <h2>Idiomas</h2>
-        <p>Castellano: Nativo</p>
-        <p>Inglés: Advanced (C1) Acreditado</p>
-    </div>
-    
-    <div class="seccion">
-        <h2>Voluntariado</h2>
-        <p><strong>Diseñador de página web</strong> - Diseño y montaje de un sitio web para alojar las inscripciones y dar visibilidad al evento "Concurso de castillos de arena - ATECE GIPUZKOA" (oct. 2023 - abr. 2024)</p>
-        <p><strong>BASIDA</strong> - Estancia de 15 días en una casa de acogida para personas con VIH/SIDA y en riesgo de exclusión social en Aranjuez (jul. 2022)</p>
-    </div>
-    
-    <div class="seccion">
-        <h2>Distinciones</h2>
-        <p><strong>Diploma de alumno mediador</strong> - Miembro del equipo de mediación estudiantil del centro. Formación en mediación y resolución de conflictos. Junta de Castilla y León + Colegio La Salle Palencia (2019)</p>
+            <div class="profile-header">
+                <h1>Carlos Martínez de la Fuente</h1>
+                <span class="role">Ingeniero Biomédico</span>
+                <p style="font-size: 0.9em; color: #555; margin-top: 10px;">
+                    Apasionado de los datos, la IA y la programación. Resolutivo y multidisciplinar.
+                </p>
+            </div>
+
+            <div class="contact-info" style="margin-top: 30px;">
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Donostia / San Sebastián</span></div>
+                <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+34608968901">+34 608 96 89 01</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:carmarfu03@gmail.com">carmarfu03@gmail.com</a></div>
+                <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/cmdlf" target="_blank">LinkedIn</a></div>
+                <div class="contact-item"><i class="fas fa-car"></i> <span>Carnet B (Coche propio)</span></div>
+            </div>
+
+            <div style="margin-top: 35px;">
+                <h2>Competencias</h2>
+                <p style="margin-top:10px; font-weight:600; font-size:14px;">Programación</p>
+                <div class="skills-grid">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Matlab</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">LaTeX</span>
+                </div>
+                <p style="margin-top:10px; font-weight:600; font-size:14px;">Herramientas</p>
+                <div class="skills-grid">
+                    <span class="skill-tag">PowerBI</span>
+                    <span class="skill-tag">GitHub/GitLab</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 35px;">
+                <h2>Idiomas</h2>
+                <p><strong>Castellano:</strong> Nativo</p>
+                <p style="margin-top:5px;"><strong>Inglés:</strong> Advanced (C1)</p>
+                <p style="margin-top:5px;"><strong>Euskera:</strong> Básico (A1)</p>
+                <p style="margin-top:5px;"><strong>Francés:</strong> Elementary (A2)</p>
+            </div>
+
+            <div style="margin-top: 35px;">
+                <h2>Aficiones</h2>
+                <div class="hobby-item">
+                    <strong><i class="fas fa-mountain"></i> Montaña y Escalada</strong>
+                    <span>Estilo de vida saludable, activo y contacto con la naturaleza.</span>
+                </div>
+                <div class="hobby-item">
+                    <strong><i class="fas fa-chess-knight"></i> Modelismo</strong>
+                    <span>Habilidad manual, paciencia y atención al detalle.</span>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <section>
+                <h2>Experiencia Profesional</h2>
+                
+                <div class="experience-item">
+                    <h3>Ingeniero Biomédico en Prácticas</h3>
+                    <span class="institution">Optec4Life | Jul. - Sept. 2025</span>
+                    <ul class="details">
+                        <li>Desarrollo de una interfaz con <strong>Python</strong>, <strong>PyQt6</strong> y <strong>Raspberry Pi</strong> para el control de un dispositivo de detección de asfixia perinatal.</li>
+                        <li>Diseño de un acople para sonda biomédica mediante <strong>CAD</strong> e <strong>impresión 3D</strong>.</li>
+                        <li>Trabajo en entorno de start-up tecnológica de alto impacto.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Investigador - Proyecto Fin de Grado</h3>
+                    <span class="institution">Tecnun, Universidad de Navarra | Ene. - Sept. 2025</span>
+                    <ul class="details">
+                        <li>Desarrollo de un algoritmo de ML para el control de prótesis de muñeca.</li>
+                        <li>Análisis de señales biomédicas y optimización de modelos predictivos en Python.</li>
+                    </ul>
+                    
+                </div>
+
+                <div class="experience-item">
+                    <h3>Alumno Interno - Bioinformática (PhysiBoSS)</h3>
+                    <span class="institution">Tecnun, Universidad de Navarra | Feb. 2024 - May. 2024</span>
+                    <ul class="details">
+                        <li>Simulación de evolución de tumores utilizando el framework PhysiBoSS en entorno Linux.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Alumno Interno - Ingeniería de Materiales (Biomateriales)</h3>
+                    <span class="institution">Tecnun, Universidad de Navarra | Jun. 2023</span>
+                    <ul class="details">
+                        <li>Caracterización de hidrogeles mediante ensayos de indentación.</li>
+                        <li>Desarrollo de fibras mediante electrospinning y caracterización bajo microscopio.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Formación Académica</h2>
+                <div class="experience-item">
+                    <h3>Máster en Ingeniería Biomédica</h3>
+                    <span class="institution">Tecnun, Universidad de Navarra | 2025 - 2026</span>
+                    <ul class="details">
+                        <li>Mención en <strong>Análisis de datos</strong>.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Grado en Ingeniería Biomédica</h3>
+                    <span class="institution">Tecnun, Universidad de Navarra | 2021 - 2025</span>
+                    <ul class="details">
+                        <li><strong>IAthon I ed.:</strong> Uso de API de ChatGPT para generación de informes automatizados.</li>
+                        <li><strong>Curso BioDesign V ed.:</strong> Diseño y prototipado de simulador de venopunción.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Bachillerato Dual Español-Estadounidense</h3>
+                    <span class="institution">Academia Colegia + Colegio La Salle Palencia | 2017 - 2021</span>
+                    <ul class="details">
+                        <li>Premio First Lego League (Robotix Team, 2017).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Voluntariado y Proyectos</h2>
+
+                <div class="experience-item">
+                    <h3>Diseñador Web (ATECE GIPUZKOA)</h3>
+                    <span class="institution">Oct. 2023 - Abr. 2024 | Feb. 2025 - May. 2025</span>
+                    <ul class="details">
+                        <li>Diseño y despliegue de sitio web para la gestión e inscripciones del evento "Concurso de castillos de arena".</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Voluntario BASIDA</h3>
+                    <span class="institution">Jul. 2022 | Aranjuez</span>
+                    <ul class="details">
+                        <li>Asistencia en casa de acogida para personas en riesgo de exclusión social y sanitaria.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html>
-
