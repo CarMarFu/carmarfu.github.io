@@ -268,3 +268,109 @@ ul.details li::before {
         color: black;
     }
 }
+
+/* --- ESTILOS "LEER MÁS" MODERNO (Alineado al centro) --- */
+
+details.toggle-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* El summary ahora es un contenedor flexible */
+details.toggle-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; /* Separa info a la izq y botón a la der */
+    align-items: center; /* <--- CAMBIO CLAVE: Alinea verticalmente al centro */
+    padding: 5px 0;
+}
+
+/* Ocultar triángulo por defecto */
+details.toggle-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Contenedor para Título e Institución (Parte Izquierda) */
+.header-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: 10px; /* Un poco de aire por si el título es muy largo */
+}
+
+.header-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+.header-info .institution {
+    margin: 0;
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
+}
+
+/* El botón de texto (Parte Derecha) */
+.toggle-text {
+    font-size: 13px;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: lowercase;
+    margin-left: 5px;
+    white-space: nowrap;
+    /* Se ha eliminado el margin-top que había antes */
+}
+
+/* Lógica del texto */
+.toggle-text::after {
+    content: "leer más +";
+}
+
+details[open] .toggle-text::after {
+    content: "cerrar -";
+    color: #888;
+}
+
+/* --- ANIMACIÓN SUAVE DE APERTURA --- */
+.details-content {
+    /* overflow: hidden es vital para que la animación de altura funcione bien */
+    overflow: hidden; 
+}
+
+details[open] .details-content {
+    animation: smoothOpen 0.5s ease-out forwards;
+}
+
+@keyframes smoothOpen {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px); /* Empieza un poco más arriba */
+        max-height: 0;               /* Altura inicial 0 para que no ocupe espacio */
+        margin-top: 0;               /* Sin margen al inicio */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* Posición final natural */
+        max-height: 500px;           /* Un valor alto seguro para que quepa todo el texto */
+        margin-top: 15px;            /* Tu margen deseado final */
+    }
+}
+
+/* IMPRESIÓN: Asegurar que se ve todo sin animaciones */
+@media print {
+    details.toggle-item .details-content {
+        display: block !important;
+        opacity: 1 !important;
+        max-height: none !important;
+    }
+    .toggle-text {
+        display: none;
+    }
+    details.toggle-item {
+        border-bottom: none;
+        margin-bottom: 15px;
+    }
+}

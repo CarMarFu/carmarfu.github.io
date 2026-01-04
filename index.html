@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Carlos Martínez de la Fuente</title>
+    
+    <!-- Tipografía Inter (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Hoja de Estilos Personalizada -->
@@ -14,8 +18,10 @@
 </head>
 <body>
     <div class="container">
+        <!-- BARRA LATERAL (SIDEBAR) -->
         <aside>
             <div class="profile-photo-container">
+                <!-- Foto de perfil: Asegúrate de tener la imagen en la carpeta media/ -->
                 <img src="media/E44A6166.JPG" alt="Carlos Martínez" class="profile-photo" onerror="this.style.display='none'"> 
             </div>
 
@@ -27,14 +33,6 @@
                 </p>
             </div>
 
-            <div class="contact-info" style="margin-top: 30px;">
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Donostia / San Sebastián</span></div>
-                <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+34608968901">+34 608 96 89 01</a></div>
-                <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:carmarfu03@gmail.com">carmarfu03@gmail.com</a></div>
-                <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/cmdlf" target="_blank">LinkedIn</a></div>
-                <div class="contact-item"><i class="fas fa-car"></i> <span>Carnet B (Coche propio)</span></div>
-            </div>
-
             <div style="margin-top: 35px;">
                 <h2>Competencias</h2>
                 <p style="margin-top:10px; font-weight:600; font-size:14px;">Programación</p>
@@ -44,11 +42,16 @@
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">Linux</span>
                     <span class="skill-tag">LaTeX</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Data Analysis</span>
                 </div>
                 <p style="margin-top:10px; font-weight:600; font-size:14px;">Herramientas</p>
                 <div class="skills-grid">
                     <span class="skill-tag">PowerBI</span>
                     <span class="skill-tag">GitHub/GitLab</span>
+                    <span class="skill-tag">RStudio</span>
+                    <span class="skill-tag">Anaconda</span>
                 </div>
             </div>
 
@@ -58,6 +61,25 @@
                 <p style="margin-top:5px;"><strong>Inglés:</strong> Advanced (C1)</p>
                 <p style="margin-top:5px;"><strong>Euskera:</strong> Básico (A1)</p>
                 <p style="margin-top:5px;"><strong>Francés:</strong> Elementary (A2)</p>
+            </div>
+
+            <div class="contact-info" style="margin-top: 30px;">
+                <h2>Contacto</h2>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> <span>Donostia / San Sebastián</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i> <a href="tel:+34608968901">+34 608 96 89 01</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> <a href="mailto:carmarfu03@gmail.com">carmarfu03@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/cmdlf" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-car"></i> <span>Carnet B (Coche propio)</span>
+                </div>
             </div>
 
             <div style="margin-top: 35px;">
@@ -73,7 +95,72 @@
             </div>
         </aside>
 
+        <!-- CONTENIDO PRINCIPAL -->
         <main>
+
+            <section>
+                <h2>Formación Académica</h2>
+                
+
+                <div class="header-info">
+                    <h3>Máster en Ingeniería Biomédica</h3>
+                    <span class="institution">Tecnun, Universidad de Navarra | 2025 - 2026</span>
+                </div>
+                <div class="details-content">
+                    <ul class="details">
+                        <li>Mención en <strong>Análisis de datos</strong>.</li>
+                    </ul>
+                </div>
+
+
+                <details class="experience-item toggle-item">
+                    <summary>
+                        <div class="header-info">
+                            <h3>Grado en Ingeniería Biomédica</h3>
+                            <span class="institution">Tecnun, Universidad de Navarra | 2021 - 2025</span>
+                        </div>
+                        <span class="toggle-text"></span>
+                    </summary>
+                    <div class="details-content">
+                        <ul class="details">
+                            <li><strong>Proyecto fin de grado:</strong> 
+                                <ul class="details">
+                                    <li>Desarrollo de un algoritmo de ML para el control de prótesis de mano.</li>
+                                    <li>Análisis de señales biomédicas y optimización de modelos predictivos en Python.</li>
+                                    <li><strong>Nota: 9,5/10</strong></li>
+                                </ul>
+                                <a href="media/Memoria_PFG_Carlos_Martinez-14-1.pdf" target="_blank" class="btn-link">
+                                    <i class="fas fa-file-pdf"></i> Ver Memoria Técnica
+                                </a>
+                            </li>
+                            <li><strong>IAthon I ed.:</strong> Uso de API de ChatGPT para generación de informes automatizados.</li>
+                            <li><strong>Curso BioDesign V ed.:</strong> Diseño y prototipado de simulador de venopunción.</li>
+                            <li><strong>Alumno interno - Dpto. de biocomputación:</strong> Simulación de evolución de tumores utilizando PhysiBoSS en entorno Linux.</li>
+                            <li><strong>Alumno interno - Dpto. de ingeniería de materiales:</strong> 
+                                <ul class="details">
+                                <li>Caracterización de hidrogeles mediante ensayos de indentación y desarrollo de fibras.</li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="experience-item toggle-item">
+                    <summary>
+                        <div class="header-info">
+                            <h3>Bachillerato Dual Español-Estadounidense</h3>
+                            <span class="institution">Academia Colegia + Colegio La Salle Palencia | 2017 - 2021</span>
+                        </div>
+                        <span class="toggle-text"></span>
+                    </summary>
+                    <div class="details-content">
+                        <ul class="details">
+                            <li>Premio First Lego League (Robotix Team, 2017).</li>
+                        </ul>
+                    </div>
+                </details>
+            </section>
+
             <section>
                 <h2>Experiencia Profesional</h2>
                 
@@ -87,81 +174,86 @@
                     </ul>
                 </div>
 
-                <div class="experience-item">
+                <!-- <div class="experience-item">
                     <h3>Investigador - Proyecto Fin de Grado</h3>
                     <span class="institution">Tecnun, Universidad de Navarra | Ene. - Sept. 2025</span>
                     <ul class="details">
                         <li>Desarrollo de un algoritmo de ML para el control de prótesis de muñeca.</li>
                         <li>Análisis de señales biomédicas y optimización de modelos predictivos en Python.</li>
                     </ul>
-                    
+
                     <a href="media/Memoria_PFG_Carlos_Martinez-14-1.pdf" target="_blank" class="btn-link">
                         <i class="fas fa-file-pdf"></i> Ver Memoria Técnica
                     </a>
-                </div>
+                </div> --> 
 
-                <div class="experience-item">
+                <!-- <div class="experience-item">
                     <h3>Alumno Interno - Bioinformática (PhysiBoSS)</h3>
                     <span class="institution">Tecnun, Universidad de Navarra | Feb. 2024 - May. 2024</span>
                     <ul class="details">
                         <li>Simulación de evolución de tumores utilizando el framework PhysiBoSS en entorno Linux.</li>
                     </ul>
-                </div>
+                </div> -->
 
-                <div class="experience-item">
+                <!-- <div class="experience-item">
                     <h3>Alumno Interno - Ingeniería de Materiales (Biomateriales)</h3>
                     <span class="institution">Tecnun, Universidad de Navarra | Jun. 2023</span>
                     <ul class="details">
                         <li>Caracterización de hidrogeles mediante ensayos de indentación.</li>
                         <li>Desarrollo de fibras mediante electrospinning y caracterización bajo microscopio.</li>
                     </ul>
-                </div>
-            </section>
-
-            <section>
-                <h2>Formación Académica</h2>
-                <div class="experience-item">
-                    <h3>Máster en Ingeniería Biomédica</h3>
-                    <span class="institution">Tecnun, Universidad de Navarra | 2025 - 2026</span>
-                    <ul class="details">
-                        <li>Mención en <strong>Análisis de datos</strong>.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Grado en Ingeniería Biomédica</h3>
-                    <span class="institution">Tecnun, Universidad de Navarra | 2021 - 2025</span>
-                    <ul class="details">
-                        <li><strong>IAthon I ed.:</strong> Uso de API de ChatGPT para generación de informes automatizados.</li>
-                        <li><strong>Curso BioDesign V ed.:</strong> Diseño y prototipado de simulador de venopunción.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Bachillerato Dual Español-Estadounidense</h3>
-                    <span class="institution">Academia Colegia + Colegio La Salle Palencia | 2017 - 2021</span>
-                    <ul class="details">
-                        <li>Premio First Lego League (Robotix Team, 2017).</li>
-                    </ul>
-                </div>
+                </div> -->
             </section>
 
             <section>
                 <h2>Voluntariado y Proyectos</h2>
 
-                <div class="experience-item">
-                    <h3>Diseñador Web (ATECE GIPUZKOA)</h3>
-                    <span class="institution">Oct. 2023 - Abr. 2024 | Feb. 2025 - May. 2025</span>
-                    <ul class="details">
-                        <li>Diseño y despliegue de sitio web para la gestión e inscripciones del evento "Concurso de castillos de arena".</li>
-                    </ul>
-                </div>
+                <details class="experience-item toggle-item">
+                    <summary>
+                        <div class="header-info">
+                            <h3>Diseñador Web (ATECE GIPUZKOA)</h3>
+                            <span class="institution">Feb. 2025 - May. 2025</span>
+                        </div>
+                        <span class="toggle-text"></span>
+                    </summary>
+                    <div class="details-content">
+                        <ul class="details">
+                            <li>Diseño y despliegue de sitio web para la gestión e inscripciones de la segunda edición del evento "Concurso de castillos de arena".</li>
+                            <li>Hosteo de página en GitHub Pages con dominio propio mediante Jekyll.</li>
+                        </ul>
+                    </div>
+                </details>
 
-                <div class="experience-item">
-                    <h3>Voluntario BASIDA</h3>
-                    <span class="institution">Jul. 2022 | Aranjuez</span>
-                    <ul class="details">
-                        <li>Asistencia en casa de acogida para personas en riesgo de exclusión social y sanitaria.</li>
-                    </ul>
-                </div>
+                <details class="experience-item toggle-item">
+                    <summary>
+                        <div class="header-info">
+                            <h3>Diseñador Web (ATECE GIPUZKOA)</h3>
+                            <span class="institution">Oct. 2023 - Abr. 2024</span>
+                        </div>
+                        <span class="toggle-text"></span>
+                    </summary>
+                    <div class="details-content">
+                        <ul class="details">
+                            <li>Diseño y despliegue de sitio web para la gestión e inscripciones del evento "Concurso de castillos de arena".</li>
+                            <li>Hosteo de página mediante el asistente de Wix.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="experience-item toggle-item">
+                    <summary>
+                        <div class="header-info">
+                            <h3>Voluntario BASIDA</h3>
+                            <span class="institution">Jul. 2022 | Aranjuez</span>
+                        </div>
+                        <span class="toggle-text"></span>
+                    </summary>
+                    <div class="details-content">
+                        <ul class="details">
+                            <li>Asistencia en casa de acogida para personas en riesgo de exclusión social y sanitaria.</li>
+                        </ul>
+                    </div>
+                </details>
             </section>
         </main>
     </div>
