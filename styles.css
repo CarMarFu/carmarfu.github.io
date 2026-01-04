@@ -1,0 +1,270 @@
+/* Variables Globales para consistencia de color */
+:root {
+    --primary-color: #2c3e50; /* Azul oscuro corporativo */
+    --accent-color: #800020; /* Color burdeos (Burgundy) */
+    --text-color: #333;
+    --bg-color: #f0f2f5;
+    --sidebar-bg: #fff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Contenedor Principal (Grid Layout) */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Columna lateral fija | Contenido flexible */
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+aside {
+    background-color: #f8f9fa;
+    padding: 40px 30px;
+    border-right: 1px solid #eee;
+}
+
+/* Foto de Perfil */
+.profile-photo-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Encabezado del Perfil */
+.profile-header h1 {
+    font-size: 26px;
+    color: var(--primary-color);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.profile-header .role {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Información de Contacto */
+.contact-item {
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+/* Etiquetas de Competencias (Skills) */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    background: #e9ecef;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Estilos de Aficiones */
+.hobby-item {
+    margin-bottom: 12px;
+}
+
+.hobby-item strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.hobby-item span {
+    font-size: 13px;
+    color: #666;
+    display: block;
+    margin-top: 2px;
+    margin-left: 28px; /* Alineación con el texto del título */
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+main {
+    padding: 40px;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.experience-item {
+    margin-bottom: 25px;
+}
+
+.experience-item h3 {
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.institution {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    display: block;
+    font-style: italic;
+}
+
+/* Listas de detalles */
+ul.details {
+    list-style-type: none;
+}
+
+ul.details li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+ul.details li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Botón de Enlace (PDF) */
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--primary-color);
+    text-decoration: none;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+}
+
+.btn-link:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* --- RESPONSIVE DESIGN (Móvil) --- */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    aside {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .skills-grid {
+        justify-content: center;
+    }
+
+    .hobby-item strong {
+        justify-content: center;
+    }
+
+    .hobby-item span {
+        margin-left: 0;
+    }
+}
+
+/* --- ESTILOS DE IMPRESIÓN (PDF) --- */
+@media print {
+    body {
+        background: white;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .container {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .btn-link {
+        display: none; /* Ocultamos el botón de descarga en papel */
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
